@@ -38,7 +38,7 @@ jobs:
           git config --local user.name "tsuyama-craft"
           git add docs/data
           git commit -m "Update csv"
-          git pull
+          git pull origin master
           
       - name: Push changes
         uses: ad-m/github-push-action@master
