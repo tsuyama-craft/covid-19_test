@@ -1,0 +1,47 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update csv
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  schedule:
+    - cron: '0 13 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: Get csv
+        run: |
+          curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/a42f1454-ef8a-4d01-ac67-f76202fc9822/download/330001okayamacovid19medicalsystem.csv > docs/data/330001okayamacovid19medicalsystem.csv
+          curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/fa331257-8914-4a2e-b9c3-851d6ff77cb1/download/kanjahasseijoukyou.csv > docs/data/kanjahasseijoukyou.csv
+          curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/d021c012-297e-4ea9-bffa-cf55741884d1/download/kansenshashousaijouhou0420.csv > docs/data/kansenshashousaijouhou.csv
+          curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/0c728c2e-a366-421d-95df-86b6b5ad15fd/download/kansenshasuu0420.csv > docs/data/kansenshasuu0420.csv
+          curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/60ecd874-0f71-4d9f-9a8a-936fad9c99bc/download/pcr.csv > docs/data/pcr.csv
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "82013625+tsuyama-craft@users.noreply.github.com"
+          git config --local user.name "tsuyama-craft"
+          git add docs/data
+          git commit -m "Update csv"
+          git pull
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
