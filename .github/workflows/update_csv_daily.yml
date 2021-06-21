@@ -30,9 +30,9 @@ jobs:
           curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/0c728c2e-a366-421d-95df-86b6b5ad15fd/download/kansenshasuu0420.csv > docs/data/kansenshasuu0420.csv
           curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/60ecd874-0f71-4d9f-9a8a-936fad9c99bc/download/pcr.csv > docs/data/pcr.csv
           
-          iconv -f SHIFT-JIS -t UTF-8 docs/data/kansenshashousaijouhou.csv -o docs/data/kansenshashousaijouhou.csv
+          iconv -c -f SHIFT-JIS -t UTF-8 docs/data/kansenshashousaijouhou.csv -o docs/data/kansenshashousaijouhou.csv
           iconv -c -f SHIFT-JIS -t UTF-8 docs/data/kansenshasuu0420.csv -o docs/data/kansenshasuu0420.csv
-          iconv -f SHIFT-JIS -t UTF-8 docs/data/pcr.csv -o docs/data/pcr.csv
+          iconv -c -f SHIFT-JIS -t UTF-8 docs/data/pcr.csv -o docs/data/pcr.csv
 
       - name: Commit and Push
         run: |
