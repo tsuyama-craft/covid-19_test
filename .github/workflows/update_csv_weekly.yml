@@ -27,6 +27,7 @@ jobs:
       - name: Get csv
         run: |
           curl http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/fa331257-8914-4a2e-b9c3-851d6ff77cb1/download/kanjahasseijoukyou.csv > docs/data/kanjahasseijoukyou.csv
+          iconv -f SHIFT-JIS -t UTF-8 docs/data/kanjahasseijoukyou.csv -o docs/data/kanjahasseijoukyou.csv
       
       - name: Commit and Push
         run: |
