@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Update csv Every 10 days
+name: Update 330001okayamacovid19medicalsystem.csv
 
 # Controls when the action will run. 
 on:
