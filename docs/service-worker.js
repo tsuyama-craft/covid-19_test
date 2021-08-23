@@ -17,7 +17,24 @@ importScripts(
   "precache-manifest.68804490713d87374dec13e75d0dd140.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "craft"});
+workbox.core.setCacheNameDetails({ prefix: "craft" });
+
+self.addEventListener('activate', (event) => {
+  var cacheWhitelist = ['v2'];
+
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          // ホワイトリストにないキャッシュ(古いキャッシュ)は削除する
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
