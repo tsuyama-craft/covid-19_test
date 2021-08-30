@@ -3,29 +3,16 @@
   <div class="pagelink">
     <router-link to="/">新型コロナウイルス情報</router-link><a>＞津山市コロナ感染者詳細情報</a>
   </div>
-  <h1 v-if="$store.state.detaildata.length > 0">津山市コロナ感染者詳細情報</h1>
+  <h1>津山市コロナ感染者詳細情報</h1>
   <button type="button" v-on:click="Back" :disabled="isTestDisabledBack">前</button>
   <button type="button" v-on:click="Next" :disabled="isTestDisabledNext">次</button>
+  <!--
   <canvas v-if="isLarge == true" id="chart" height="100" width="300"></canvas>
   <canvas v-else-if="isLarge == false" id="chart"></canvas>
-  <br><br>
-  <div class="filter">
-    <span style="white-space: nowrap;" class="filterkeyword">絞り込み<input type="text" v-model="keyword"></span>
-  </div>
-  <table class="table1">
-    <thead>
-      <tr>
-        <th v-for="head in columnshead" :key="head">
-          {{ head }}
-        </th>
-      </tr>
-    </thead>
-    <tbody class="detailbody">
-      <tr v-for="task in reverseItems" :key="task">
-        <td v-for="(value, key) in columns" :key="key">
-          {{ task[key] }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  -->
 </template>
+
+
+<script>
+
+</script>
