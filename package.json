@@ -23,6 +23,7 @@
     "encoding-japanese": "^1.0.30",
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",
+    "vue-chartjs": "^3.5.1",
     "vue-good-table": "^2.21.1",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
