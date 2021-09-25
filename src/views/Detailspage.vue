@@ -40,6 +40,7 @@ function DataSet(data, label, count) {
     search[i] = label[i].slice(0, 7);
   }
 
+  //重複のない配列にする。参考：https://www.suzu6.net/posts/95-js-duplication/
   const searchWord = search.filter(function (x, i, self) {
     return self.indexOf(x) === i;
   });
