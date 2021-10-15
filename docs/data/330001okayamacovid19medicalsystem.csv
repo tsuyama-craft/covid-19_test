@@ -1,56 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Page Not Found</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 36px;
-                padding: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title">
-                    Sorry, the page you are looking for could not be found.                </div>
-            </div>
-        </div>
-    </body>
-</html>
+No,全国地方公共団体コード,都道府県名,公表_年月日,確保数_病床,確保数_宿泊療養施設,保有数_人工呼吸器,保有数_ECMO
+1,330001,岡山県,2020/5/15,117,78,517,28
+2,330001,岡山県,2020/6/30,220,78,517,28
+3,330001,岡山県,2020/7/30,250,207,517,28
+4,330001,岡山県,2020/9/29,257,207,517,28
+5,330001,岡山県,2020/10/30,281,207,517,28
+6,330001,岡山県,2020/11/24,302,207,517,28
+7,330001,岡山県,2020/12/22,401,207,517,28
+8,330001,岡山県,2021/2/19,406,207,517,28
+9,330001,岡山県,2021/3/26,412,207,517,28
+10,330001,岡山県,2021/5/7,412,404,517,28
+11,330001,岡山県,2021/5/20,482,404,517,28
+12,330001,岡山県,2021/5/28,492,404,742,35
+13,330001,岡山県,2021/8/5,557,404,745,35
+14,330001,岡山県,2021/8/20,557,507,745,35
