@@ -6,8 +6,10 @@
   <h1 v-if="$store.state.detaildata.length > 0">岡山県コロナ感染者詳細情報</h1>
   <button type="button" v-on:click="Back" :disabled="isTestDisabledBack">前</button>
   <button type="button" v-on:click="Next" :disabled="isTestDisabledNext">次</button>
-  <canvas v-if="isLarge == true" id="chart" height="100" width="300"></canvas>
-  <canvas v-else-if="isLarge == false" id="chart"></canvas>
+  <div class=Chart>
+    <canvas v-if="isLarge == true" id="chart" height="100" width="300"></canvas>
+    <canvas canvas v-else-if="isLarge == false" id="chart"></canvas>
+  </div>
   <br><br>
   <div class="filter">
     <span style="white-space: nowrap;" class="filterkeyword">絞り込み<input type="text" v-model="keyword"></span>
@@ -132,8 +134,9 @@ export default {
       }
     },
     CreateChart: function () {
-      const labelList = this.listCategoryCreat("集計時点_年月日");
-      const dataList = this.listCategoryCreat("日別の感染者数");
+      let labelList = this.listCategoryCreat("集計時点_年月日");
+      let dataList = this.listCategoryCreat("日別の感染者数");
+      labelList = labelList.filter(Boolean);
       const filteredDataSet = DataSet(dataList, labelList, this.count);
 
       this.CountLength = filteredDataSet.LabelLen;
@@ -145,7 +148,9 @@ export default {
           datasets: [
             {
               data: filteredDataSet.data,
-              backgroundColor: "#00B0F0",
+              backgroundColor: "rgba(54, 162, 235, 0.2)",
+              borderColor: "rgb(54, 162, 235)",
+              borderWidth: 1,
               label: "新規感染者数",
             },
           ],
@@ -229,6 +234,10 @@ export default {
 </script>
 
 <style>
+.Chart{
+  width: 95%;
+  margin: 0 auto;
+}
 .table1 {
   width: 90%;
   margin: 0 auto;
