@@ -266,8 +266,8 @@ export default {
       let municipalitiesList = this.listCategoryCreat("市区町村名");
       let filteredDataSet = DataSet(municipalitiesList);
       this.chart.data.datasets[0].data = filteredDataSet.TotalData;
-      this.chart.options.scales.xAxes[0].ticks.suggestedMax = 10000;
-      this.chart.options.scales.xAxes[0].ticks.stepSize = 1000;
+      this.chart.options.scales.xAxes[0].ticks.suggestedMax = 30000;
+      this.chart.options.scales.xAxes[0].ticks.stepSize = 2000;
       this.chart.update();
     }
   },
