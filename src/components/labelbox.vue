@@ -127,6 +127,7 @@ export default {
 }
 .ueo{
   font-size: 0.8rem;
+  text-align: center;
 }
 /*.btn{
   display: flex;
