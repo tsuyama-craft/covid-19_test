@@ -4,7 +4,7 @@
     <router-link to="/">新型コロナウイルス情報</router-link><a>＞市町村別コロナ感染者数</a>
   </div>
   <h1>市町村別コロナ感染者数</h1>
-  <p>日付を入れたい</p>
+  <!--<p>日付を入れたい</p>-->
   <ChartHorBar></ChartHorBar>
 </template>
 
